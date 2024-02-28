@@ -28,16 +28,13 @@ export class PDFChatBot {
   async initialise() {
     console.log('initialising pdf chat bot...');
 
-    const directoryLoader = new DirectoryLoader(
-      'src/pdf-chatbot/context-small',
-      {
-        '.pdf': (path) =>
-          new PDFLoader(path, {
-            splitPages: false,
-          }),
-        '.txt': (path) => new TextLoader(path),
-      },
-    );
+    const directoryLoader = new DirectoryLoader('src/pdf-chatbot/context', {
+      '.pdf': (path) =>
+        new PDFLoader(path, {
+          splitPages: false,
+        }),
+      '.txt': (path) => new TextLoader(path),
+    });
 
     const documents = await directoryLoader.load();
     const parsedDocuments = documents.map((document) => document.pageContent);

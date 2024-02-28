@@ -2,7 +2,7 @@
   "name": "chatbot-butt",
   "version": "0.0.1",
   "description": "",
-  "author": "",
+  "author": "George van Heerden",
   "private": true,
   "engines": {
     "node": ">=18.14.0"
